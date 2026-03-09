@@ -1,0 +1,9 @@
+# Core dependencies
+textual>=0.50.0
+biopython>=1.83
+numpy>=1.24.0
+requests>=2.31.0
+
+# Optional but recommended for full functionality
+# rdkit>=2023.9.1  # Uncomment for MOL2/SDF support and advanced chemistry
+# prolif>=2.0.0     # Uncomment for automatic interaction detection

@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pdbview"
+version = "0.2.0"
+description = "Terminal protein and ligand structure viewer with advanced cheminformatics"
+authors = [{name = "Briki Mondher", email = "mondher.briki.isdd@gmail.com"}]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.9"
+keywords = ["protein", "ligand", "pdb", "mol2", "sdf", "terminal", "tui", "bioinformatics", "cheminformatics"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Topic :: Scientific/Engineering :: Chemistry",
+]
+
+dependencies = [
+    "textual>=0.50.0",
+    "biopython>=1.83",
+    "numpy>=1.24.0",
+    "requests>=2.31.0",
+]
+
+[project.optional-dependencies]
+rdkit = [
+    "rdkit>=2023.9.1",
+]
+full = [
+    "rdkit>=2023.9.1",
+    "prolif>=2.0.0",
+]
+
+[project.scripts]
+pdbview = "pdbview.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pdbview*"]
